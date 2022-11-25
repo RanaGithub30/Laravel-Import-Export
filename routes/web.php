@@ -20,3 +20,6 @@ Route::get('user-save/{type}/{id}', [UserDetailsController::class, 'save'])->nam
 Route::any('user-post-save/{type}/{id}', [UserDetailsController::class, 'postSave'])->name('user-post-save');
 Route::get('delete-data/{id}', [UserDetailsController::class, 'delete'])->name('delete-data');
 Route::get('export-data', [UserDetailsController::class, 'export'])->name('export-data');
+
+Route::get('import-csv-page', [UserDetailsController::class, 'import_csv_page'])->name('import-csv-page');
+Route::any('import-csv', [UserDetailsController::class, 'import_csv'])->name('import-csv');

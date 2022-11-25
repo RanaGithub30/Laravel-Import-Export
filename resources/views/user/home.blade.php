@@ -3,8 +3,9 @@
 
 @include('common.session_messages')
 
-<div class="mt-5" style="margin-top: 20px; margin-left: 80%; margin-buttom: 20px;">
+<div class="mt-5" style="margin-top: 20px; margin-left: 70%; margin-buttom: 20px;">
 <a href="{{route('user-save', ['type' => 'add', 'id' => 0])}}" class="btn btn-primary">Add New</a>
+<a href="{{route('import-csv-page')}}" class="btn btn-primary">Import Csv</a>
 
 @if($all_details->isEmpty())
 <a  class="btn btn-primary" style="cursor: no-drop;">Export in CSV</a>
