@@ -179,6 +179,10 @@ return [
         //// For CSV/Excel..
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
+        // For Pdf..
+
+        Barryvdh\DomPDF\ServiceProvider::class,
+
     ],
 
     /*
@@ -234,6 +238,10 @@ return [
         // for excel/csv
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+        // for pdf
+
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

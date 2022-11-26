@@ -3,21 +3,24 @@
 
 @include('common.session_messages')
 
-<div class="mt-5" style="margin-top: 20px; margin-left: 70%; margin-buttom: 20px;">
+<div class="mt-5" style="margin-top: 20px; margin-left: 60%; margin-buttom: 20px;">
 <a href="{{route('user-save', ['type' => 'add', 'id' => 0])}}" class="btn btn-primary">Add New</a>
-<a href="{{route('import-csv-page')}}" class="btn btn-primary">Import Csv</a>
+<a href="{{route('import-csv-page')}}" class="btn btn-success">Import Csv</a>
 
 @if($all_details->isEmpty())
-<a  class="btn btn-primary" style="cursor: no-drop;">Export in CSV</a>
+<a  class="btn btn-default" style="cursor: no-drop;">Export in CSV</a>
+<a  class="btn btn-danger" style="cursor: no-drop;">Export in PDF</a>
 @else
-<a href="{{route('export-data')}}" class="btn btn-primary">Export in CSV</a>
+<a href="{{route('export-data')}}" class="btn btn-default">Export in CSV</a>
+<a href="{{route('generate-pdf')}}"  class="btn btn-danger" >Export in PDF</a>
 @endif
 </div>
 
 @if($all_details->isEmpty())
    <center><div><h2>No Record Found</h2></div></center>
 @else
-<table class="table">
+
+<table class="table" style="margin-top: 25px;">
     <thead>
       <tr>
          <th>SL. No</th>

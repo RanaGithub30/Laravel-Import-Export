@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserDetailsController;
+use App\Http\Controllers\CsvController;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,14 @@ Route::get('user-save/{type}/{id}', [UserDetailsController::class, 'save'])->nam
 
 Route::any('user-post-save/{type}/{id}', [UserDetailsController::class, 'postSave'])->name('user-post-save');
 Route::get('delete-data/{id}', [UserDetailsController::class, 'delete'])->name('delete-data');
-Route::get('export-data', [UserDetailsController::class, 'export'])->name('export-data');
 
-Route::get('import-csv-page', [UserDetailsController::class, 'import_csv_page'])->name('import-csv-page');
-Route::any('import-csv', [UserDetailsController::class, 'import_csv'])->name('import-csv');
+// Csv Export & Import..
+
+Route::get('export-data', [CsvController::class, 'export'])->name('export-data');
+
+Route::get('import-csv-page', [CsvController::class, 'import_csv_page'])->name('import-csv-page');
+Route::any('import-csv', [CsvController::class, 'import_csv'])->name('import-csv');
+
+// Pdf Export..
+
+Route::get('generate-pdf', [PdfController::class, 'generate_pdf'])->name('generate-pdf');
