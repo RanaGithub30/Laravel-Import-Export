@@ -124,7 +124,7 @@ class UserDetailsController extends Controller
     public function import_csv(Request $request)
     {
          if($request->isMethod('post')){
-            Excel::import(new UsersImport, $request->file('file'));
+            Excel::import(new UsersImport, request()->file('file'));
             return redirect()->route('/');
          }
 

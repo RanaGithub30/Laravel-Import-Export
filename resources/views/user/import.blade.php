@@ -8,7 +8,7 @@
 
     <div class="form-group">
       <label for="name">Chose Csv File:</label>
-      <input type="file" class="form-control" id="name" name="name">
+      <input type="file" class="form-control" id="file" name="file">
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
